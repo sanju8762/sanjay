@@ -1,27 +1,35 @@
 import tkinter as tk
-
-# def call():
-    
-#     input_label=(Txt1.get())
-#     print(input_label)
-#     input_label2=(txt2.get())
-#     print(input_label2)
-#     input_label3=(txt3.get())
-#     print(input_label3)
-#     input_label4=(txt4.get())
-#     print(input_label4)
-#     input_label5=(txt5.get())
-#     print(input_label5)
-#     input_label6=(txt6.get())
-#     print(input_label6)
-
+import csv
+def call():
+    # enter inputs
+    input_label=(Txt1.get())
+    print(input_label)
+    input_label2=(txt2.get())
+    print(input_label2)
+    input_label3=(txt3.get())
+    print(input_label3)
+    input_label4=(txt4.get())
+    print(input_label4)
+    input_label5=(txt5.get())
+    print(input_label5)
+    input_label6=(txt6.get())
+    print(input_label6)
+   
+    # path to open file
+    with open("C:/Users/User1/Desktop/sanjay/student.csv","w")as file:
+        file_object=csv.writer(file)
+        file_object.writerow([input_label,input_label2,input_label3,input_label4,input_label5,input_label6])
 
 main=tk.Tk(className="student id ")
-main.geometry("400x400")
+main.geometry("500x500")
+#geometry(sizeof the card(width,length)) of the card
+
+#EXAMPLE"label1=tk.label(main,text="ABC 123").grid(row=0,column=0)
+#Txt1=tk.Entry(main).grid(row=0,column=1)
 
 
 
-label1=tk.Label(main,text="student Name").grid(row=0,column=0)
+label1=tk.Label(main,text="STUDENT NAME").grid(row=0,column=0)
 Txt1=tk.Entry(main).grid(row=0,column=1)
 
 label2=tk.Label(main,text="STUDENT CLASS").grid(row=1,column=0)
@@ -39,10 +47,15 @@ txt5=tk.Entry(main).grid(row=4,column=1)
 labe6=tk.Label(main,text="PHONE NUMBER").grid(row=5,column=0)
 txt6=tk.Entry(main).grid(row=5,column=1)
 
-btn1=tk.Button(main,text="SUBMIT",command=call).grid(row=6,column=1)
+
+
+#labels in rows and columns
+
+btn1=tk.Button(main,text="SUBMIT",command=call).grid(row=6,column=0)
 
 
 main.mainloop()
 
-
+# obj=input_label=(tex1.get())
+# CSV.FILE
 
